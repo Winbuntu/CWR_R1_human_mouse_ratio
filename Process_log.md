@@ -22,4 +22,19 @@ Data file: 16C-1
 	 	
 	Step 5-6 are in **Map\_and\_count.sh**
 	
+## R script to plot
+
+1. Download chromosome length information to normalize read count
 	
+	[hg38 chromosome sizes file from UCSC](https://genome.ucsc.edu/goldenPath/help/hg38.chrom.sizes)
+	
+	[mm10 chromosome sizes file from UCSC](http://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/mm10.chrom.sizes)
+	
+	Total mapped reads, mm10.chr9 and mm10.chr2 has wired 2fold depth then others. Try use unique mapped reads.
+	
+1. Generate unique mapped reads table:
+	
+	* output chromosome names list **chr.names.txt**
+	* shell script **get\_unique\_mapped\_count.sh**
+
+	* Unique mapped reads not works well.
