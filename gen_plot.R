@@ -112,3 +112,21 @@ p.Normalized.unique = ggplot(data=chr.count.purified.unique, aes(x=factor(V1,lev
   ylab("mapped read count") + xlab("chromosomes")+ ggtitle("Read mapping among chimeric genome")+
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 p.Normalized.unique
+
+
+### here use unique mapped read count from new data
+
+old.code.count = read.table("15F-01-05_unque_read_count.txt")
+colnames(old.code.count) = c("chrname1","uniq1")
+
+chr.count.purified.unique.old.code = cbind(chr.count.purified,old.code.count)
+
+chr.count.purified.unique.old.code$uniq1_normalized.by.length = 
+  chr.count.purified.unique.old.code$uniq1/chr.count.purified.unique.old.code$V2
+
+p.Normalized.unique.old.code = ggplot(data=chr.count.purified.unique.old.code, aes(x=factor(V1,levels = chr.levels), y=uniq1_normalized.by.length, fill = species)) +
+  geom_bar(stat="identity", position=position_dodge()) + theme_bw() + 
+  ylab("mapped read count") + xlab("chromosomes")+ ggtitle("Read mapping among chimeric genome")+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+p.Normalized.unique.old.code
+

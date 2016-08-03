@@ -38,3 +38,27 @@ Data file: 16C-1
 	* shell script **get\_unique\_mapped\_count.sh**
 
 	* Unique mapped reads not works well.
+
+
+
+#Test with 15F, CWR-R1 shallow sequencing data
+
+data: 15F-01-05
+
+##Re-process shallow mapped data, see if can reproduce the figure
+
+Old data, mm10-hg38 index, still wired peaks.
+
+# Re-ru the task with old code
+
+```
+sh ./print_chromosome_reads.sh
+```
+	
+```
+# use a different flag here. This gives you unique mapped reads
+samtools view -q 10 15F-01-05_CAGATC_L001_R1_001.fastq.gz_sorted.bam ${line} |wc -l
+```
+The figure become good when quickly go through 15F data.
+
+Re-run with 16C-1 data.
