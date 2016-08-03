@@ -128,5 +128,7 @@ p.Normalized.unique.old.code = ggplot(data=chr.count.purified.unique.old.code, a
   geom_bar(stat="identity", position=position_dodge()) + theme_bw() + 
   ylab("mapped read count") + xlab("chromosomes")+ ggtitle("Read mapping among chimeric genome")+
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
-p.Normalized.unique.old.code
+
+
+ggsave(p.Normalized.unique.old.code, filename = "read_count_bar.Normalized.old_code.pdf",width = 10,height=5)
 

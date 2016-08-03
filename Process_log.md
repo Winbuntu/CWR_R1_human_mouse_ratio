@@ -62,3 +62,7 @@ samtools view -q 10 15F-01-05_CAGATC_L001_R1_001.fastq.gz_sorted.bam ${line} |wc
 The figure become good when quickly go through 15F data.
 
 Re-run with 16C-1 data.
+
+16C-1 data is not good. 
+
+**Finalize the figure use old data and old code.**
